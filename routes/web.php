@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('welcome',['registro'=> NULL]);
+})->name('welcome');
+
+Route::post('Registrar', [App\Http\Controllers\RegistroController::class, 'registro'])->name('registro');
